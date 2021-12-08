@@ -45,7 +45,7 @@ const Header = ({}) => {
         </IconButton>
         <Menu
           anchorEl={anchorEl}
-          open={anchorEl}
+          open={!!anchorEl}
           onClose={handleClose}
           onClick={handleClose}
           transformOrigin={{ horizontal: 'right', vertical: 'top' }}
