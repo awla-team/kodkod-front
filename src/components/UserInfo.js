@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import avatar from '../assets/images/avatar.png';
+import { Avatar } from '@mui/material';
 
 const Container = styled.div`
   width: 100%;
@@ -10,12 +11,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 8px 24px;
-`;
-
-const Avatar = styled.img`
-  height: 48px;
-  width: auto;
-  margin-right: 8px;
 `;
 
 const Text = styled.span`
@@ -28,7 +23,7 @@ const Text = styled.span`
 
 const UserInfo = ({}) => (
   <Container>
-      <Avatar src={avatar} />
+      <Avatar src={avatar} sx={{ height: 48, width: 48 }} />
       <Text>Profesora Clayton</Text>
   </Container>
 );
