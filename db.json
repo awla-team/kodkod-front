@@ -1,0 +1,21 @@
+{
+  "asignaturas": [
+    { "id": 0, "name": "Lenguaje y literatura", "color": "#6D61E9", "img": "/lenguaje.png" },
+    { "id": 1, "name": "Historia, geografía y c.s.", "color": "#63CFEA", "img": "/historia.png" },
+    { "id": 2, "name": "Matemática", "color": "#62AFE8", "img": "/matematica.png" },
+    { "id": 3, "name": "Tecnología", "color": "#A737D5", "img": "/tecnologia.png" }
+  ],
+  "unidades": [
+    { "id": 0, "name": "Unidad 1", "asignaturaId": 0 },
+    { "id": 1, "name": "Unidad 2", "asignaturaId": 0 },
+    { "id": 2, "name": "Unidad 3", "asignaturaId": 0 },
+    { "id": 3, "name": "Unidad 4", "asignaturaId": 0 },
+    { "id": 4, "name": "Unidad 1", "asignaturaId": 1 },
+    { "id": 5, "name": "Unidad 2", "asignaturaId": 1 },
+    { "id": 6, "name": "Unidad 3", "asignaturaId": 1 },
+    { "id": 7, "name": "Unidad 1", "asignaturaId": 2 },
+    { "id": 8, "name": "Unidad 2", "asignaturaId": 2 },
+    { "id": 9, "name": "Unidad 1", "asignaturaId": 3 },
+    { "id": 10, "name": "Unidad 1", "asignaturaId": 3 }
+  ]
+}

@@ -6,8 +6,9 @@ import { ReactComponent as BooksSVG} from '../assets/images/books.svg';
 import UserInfo from './UserInfo';
 
 const Container = styled.div`
-  width: 280px;
+  width: 240px;
   border-right: 1px solid rgba(145, 158, 171, 0.24);
+  background: #FFFFFF;
 `;
 
 const LogoContainer = styled.div`
@@ -19,7 +20,7 @@ const LogoContainer = styled.div`
 const UserInfoContainer = styled.div`
   display: flex;
   width: 100%;
-  padding: 16px;
+  margin: 24px 0px;
 `;
 
 const Logo = styled.img`
@@ -46,43 +47,27 @@ const StyledPageList = styled(PageList)`
   padding: 0px;
   font-size: 14px;
   a {
-    color: rgb(99, 115, 129);
+    color: #6A94FF;
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 12px 0px 12px 36px;
-
-    &:hover {
-      background: rgba(145, 158, 171, 0.08);
-    }
+    padding: 12px 0px 12px 42px;
 
     svg {
-      fill: rgb(99, 115, 129);
-      height: 24px;
+      height: 36px;
       width: auto;
-      margin-right: 16px;
+      margin-right: 8px;
     }
   }
 
   .is-selected {
-    background-color: rgba(82, 154, 177, 0.1);
     position: relative;
     font-weight: bold;
     a {
-      color: rgba(82, 154, 177, 1);
+      color: #3A5CCE;
       svg {
-        fill: rgba(82, 154, 177, 1);
+        fill: #3A5CCE;
       }
-    }
-    :after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 3px;
-      border-radius: 4px 0px 0px 4px;
-      background-color: rgba(82, 154, 177, 1);
-      top: 0;
-      right: 0;
     }
   }
 `;
@@ -92,10 +77,10 @@ const pages = {
     name: 'Mis asignaturas',
     icon: <BooksSVG />,
   },
-  '/app/otro': {
-    name: 'Otro',
-    icon: <BooksSVG />,
-  }
+  // '/app/otro': {
+  //   name: 'Otro',
+  //   icon: <BooksSVG />,
+  // }
 };
 
 const SideNav = ({}) => {
@@ -108,9 +93,9 @@ const SideNav = ({}) => {
 
   return (
     <Container>
-      <LogoContainer>
+      {/* <LogoContainer>
         <Logo src={logo} />
-      </LogoContainer>
+      </LogoContainer> */}
       <UserInfoContainer>
         <UserInfo />
       </UserInfoContainer>
