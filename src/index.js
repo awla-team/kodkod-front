@@ -1,11 +1,12 @@
 import React, { lazy, Suspense } from 'react';
 import { render } from "react-dom";
-import { Outlet, BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { BrowserRouter, Route, Navigate } from "react-router-dom";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AsignaturasProvider from './providers/AsignaturasProvider';
+import { AnimatedRoutes } from './components/Transitions/RouteTransition';
 
 const theme = createTheme({
   components: {
@@ -28,13 +29,13 @@ render(
       <AsignaturasProvider>
         <Suspense fallback={<div>Cargando...</div>}>
           <BrowserRouter>
-            <Routes>
+            <AnimatedRoutes>
               <Route path="/app" element={<App />}>
                 <Route path="asignaturas" element={<Asignaturas />} />
                 <Route path="asignaturas/:asignaturaId/:cursoId" element={<Clase />} />
               </Route>
               <Route path="/" element={<Navigate replace to="/app" />} />
-            </Routes>
+            </AnimatedRoutes>
           </BrowserRouter>
         </Suspense>
       </AsignaturasProvider>

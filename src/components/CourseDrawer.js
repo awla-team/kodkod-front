@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Drawer, Typography, CircularProgress, List, ListItemButton, ListItemAvatar, ListItemText, Avatar } from '@mui/material';
 import styled from 'styled-components';
-import { getCursos } from '../services/cursos';
 import { AsignaturasContext } from '../providers/AsignaturasProvider';
 import { Link } from 'react-router-dom';
-import { replaceSpacesAndLowerCase } from '../util/stringUtil';
 
 const Container = styled.div`
   width: 360px;
@@ -38,12 +36,10 @@ const ImgContainer = styled.div`
 `;
 
 const Content = styled.div`
-
 `;
 
 const CourseDrawer = () => {
-  const { cursos, selectedAsignatura, handleUnselectAsignatura } = useContext(AsignaturasContext);
-  const [loading, setLoading] = useState(false);
+  const { cursos, cursosLoading, selectedAsignatura, handleUnselectAsignatura } = useContext(AsignaturasContext);
 
   return (
     <Drawer anchor="right" open={!!selectedAsignatura} onClose={handleUnselectAsignatura}>
@@ -53,13 +49,13 @@ const CourseDrawer = () => {
             <Typography variant="h5" component="h5" sx={{ fontWeight: 'bold' }}>
               {selectedAsignatura.name}
             </Typography>
-            <img src={selectedAsignatura.img} />
+            <img src={selectedAsignatura.img} alt={selectedAsignatura.name} />
           </ImgContainer>
           <Content>
             <Typography variant="h6" component="h6" sx={{ padding: '24px 24px 0px' }}>
               Cursos
             </Typography>
-            {loading ? (
+            {cursosLoading ? (
               <CircularProgress />
             ) : (
               <List sx={{ width: '100%' }}>

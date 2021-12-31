@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, useCallback, createContext } from 'react';
 import { getAsignaturas } from '../services/asignaturas';
 import { getCursos } from '../services/cursos';
 
@@ -17,21 +17,21 @@ const AsignaturasProvider = ({ children }) => {
     setAsignaturas([...asignaturas, asignatura]);
   };
 
-  const handleSelectAsignatura = (asignatura) => {
+  const handleSelectAsignatura = useCallback((asignatura) => {
     setSelectedAsignatura(asignatura);
-  };
+  }, []);
 
-  const handleUnselectAsignatura = () => {
+  const handleUnselectAsignatura = useCallback(() => {
     setSelectedAsignatura();
-  };
+  }, []);
 
-  const handleSelectCurso = (curso) => {
+  const handleSelectCurso = useCallback((curso) => {
     setSelectedCurso(curso);
-  };
+  }, []);
 
-  const handleUnselectCurso = () => {
+  const handleUnselectCurso = useCallback(() => {
     setSelectedCurso();
-  };
+  }, []);
 
   useEffect(() => {
     setAsignaturasLoading(true);

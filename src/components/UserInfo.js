@@ -26,7 +26,7 @@ const Subtitle = styled.span`
   color: gray;
 `;
 
-const UserInfo = ({}) => (
+const UserInfo = () => (
   <Container>
       <Avatar src={avatar} sx={{ height: 48, width: 48 }} />
       <Title>Profesora Clayton</Title>

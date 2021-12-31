@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import avatar from '../assets/images/avatar.png';
 import {
   Avatar,
@@ -11,12 +10,11 @@ import {
 } from '@mui/material';
 
 import {
-  PersonAdd,
   Settings,
   Logout
 } from '@mui/icons-material';
 
-const Header = ({}) => {
+const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {

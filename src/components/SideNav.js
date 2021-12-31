@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useLocation, Link } from "react-router-dom";
-import logo from '../assets/images/logo-big.png';
 import { ReactComponent as BooksSVG} from '../assets/images/books.svg';
 import UserInfo from './UserInfo';
 
@@ -11,20 +10,10 @@ const Container = styled.div`
   background: #FFFFFF;
 `;
 
-const LogoContainer = styled.div`
-  display: flex;
-  width: 100%;
-  padding: 24px 48px 16px;
-`;
-
 const UserInfoContainer = styled.div`
   display: flex;
   width: 100%;
   margin: 24px 0px;
-`;
-
-const Logo = styled.img`
-  width: 100%;
 `;
 
 const PageElement = ({ icon, name, url, selected }) => (
@@ -83,7 +72,7 @@ const pages = {
   // }
 };
 
-const SideNav = ({}) => {
+const SideNav = () => {
   const location = useLocation();
   const [selected, setSelected] = useState(location.pathname);
 

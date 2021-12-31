@@ -1,13 +1,10 @@
 import React from 'react';
 import {
   Typography,
-  Grid,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   CardActionArea,
-  Button,
   Avatar,
   AvatarGroup,
 } from '@mui/material';

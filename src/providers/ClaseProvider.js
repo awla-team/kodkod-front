@@ -1,5 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
-import { getAsignaturas } from '../services/asignaturas';
+import React, { useState, createContext } from 'react';
 
 export const ClaseContext = createContext();
 
