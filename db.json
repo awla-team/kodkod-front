@@ -1,26 +1,34 @@
 {
-  "asignaturas": [
-    { "id": "lengua-y-literatura", "name": "Lengua y literatura", "color": "#6D61E9", "img": "/lenguaje.png" },
-    { "id": "historia-geografia-ciencias-sociales", "name": "Historia, geografía y ciencias sociales.", "color": "#63CFEA", "img": "/historia.png" },
-    { "id": "matematica", "name": "Matemática", "color": "#62AFE8", "img": "/matematica.png" },
-    { "id": "tecnologia", "name": "Tecnología", "color": "#A737D5", "img": "/tecnologia.png" }
+  "levels": [
+    { "id": 1 },
+    { "id": 7 },
+    { "id": 8 }
   ],
-  "unidades": [
-    { "id": 0, "name": "Unidad 1", "asignaturaId": 0 },
-    { "id": 1, "name": "Unidad 2", "asignaturaId": 0 },
-    { "id": 2, "name": "Unidad 3", "asignaturaId": 0 },
-    { "id": 3, "name": "Unidad 4", "asignaturaId": 0 },
-    { "id": 4, "name": "Unidad 1", "asignaturaId": 1 },
-    { "id": 5, "name": "Unidad 2", "asignaturaId": 1 },
-    { "id": 6, "name": "Unidad 3", "asignaturaId": 1 },
-    { "id": 7, "name": "Unidad 1", "asignaturaId": 2 },
-    { "id": 8, "name": "Unidad 2", "asignaturaId": 2 },
-    { "id": 9, "name": "Unidad 1", "asignaturaId": 3 },
-    { "id": 10, "name": "Unidad 1", "asignaturaId": 3 }
+  "courses": [
+    { "id": 0, "name": "Lengua y literatura", "color": "#6D61E9", "img": "/lenguaje.png", "levelId": 7 },
+    { "id": 1, "name": "Lengua y literatura", "color": "#63CFEA", "img": "/historia.png", "levelId": 8 },
+    { "id": 2, "name": "Lengua y literatura", "color": "#62AFE8", "img": "/matematica.png", "levelId": 1 }
   ],
-  "cursos": [
-    { "id": "7a", "code": "7A", "name": "7°A", "estudiantes": 30 },
-    { "id": "7b", "code": "7B", "name": "7°B", "estudiantes": 33 },
-    { "id": "7c", "code": "7C", "name": "7°C", "estudiantes": 35 }
+  "classes": [
+    { "id": 0, "code": "7A", "name": "7°A", "estudiantes": 30, "levelId": 7 },
+    { "id": 1, "code": "7B", "name": "7°B", "estudiantes": 33, "levelId": 7 },
+    { "id": 2, "code": "7C", "name": "7°C", "estudiantes": 35, "levelId": 7 },
+    { "id": 3, "code": "8A", "name": "8°A", "estudiantes": 35, "levelId": 8 },
+    { "id": 4, "code": "8B", "name": "8°B", "estudiantes": 35, "levelId": 8 },
+    { "id": 5, "code": "8C", "name": "8°C", "estudiantes": 35, "levelId": 8 },
+    { "id": 6, "code": "1A", "name": "1°A", "estudiantes": 35, "levelId": 1 },
+    { "id": 7, "code": "1B", "name": "1°B", "estudiantes": 35, "levelId": 1 },
+    { "id": 8, "code": "1C", "name": "1°C", "estudiantes": 35, "levelId": 1 }
+  ],
+  "classCourses": [
+    { "id": "lengua-literatura-7a", "name": "Lengua y literatura - 7°A", "courseId": 0, "classId": 0 },
+    { "id": "lengua-literatura-7b", "name": "Lengua y literatura - 7°B", "courseId": 0, "classId": 1 },
+    { "id": "lengua-literatura-7c", "name": "Lengua y literatura - 7°C", "courseId": 0, "classId": 2 },
+    { "id": "lengua-literatura-8a", "name": "Lengua y literatura - 8°A", "courseId": 1, "classId": 3 },
+    { "id": "lengua-literatura-8b", "name": "Lengua y literatura - 8°B", "courseId": 1, "classId": 4 },
+    { "id": "lengua-literatura-8c", "name": "Lengua y literatura - 8°C", "courseId": 1, "classId": 5 },
+    { "id": "lengua-literatura-1a", "name": "Lengua y literatura - 1°A", "courseId": 2, "classId": 6 },
+    { "id": "lengua-literatura-1b", "name": "Lengua y literatura - 1°B", "courseId": 2, "classId": 7 },
+    { "id": "lengua-literatura-1c", "name": "Lengua y literatura - 1°C", "courseId": 2, "classId": 8 }
   ]
 }

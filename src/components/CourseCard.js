@@ -53,33 +53,31 @@ const GoToButton = styled.div`
   }
 `;
 
-const CourseCard = ({ title, img, background, onClick }) => (
+const CourseCard = ({ course, classes, onClick }) => (
   <div>
-    <Card sx={{ background, color: 'white', borderRadius: '24px', width: 280 }}>
+    <Card sx={{ background: course.color , color: 'white', borderRadius: '24px', width: 280 }}>
       <CardActionArea onClick={onClick}>
-        <ImgContainer background={background}>
+        <ImgContainer background={course.color}>
           <CardMedia
             sx={{ padding: '12px 48px' }}
             component="img"
-            src={img}
+            src={course.img}
           />
         </ImgContainer>
         <CardContent sx={{ paddingBottom: '24px' }}>
           <div>
             <Typography variant="h5" component="div" sx={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {title}
+              {course.name}
             </Typography>
             <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)', fontWeight: 'bold' }}>
               4 unidades
             </Typography>
           </div>
-          <CardBottom avatarColor={background}>
+          <CardBottom avatarColor={course.color}>
             <AvatarGroup max={3}>
-              <Avatar>7A</Avatar>
-              <Avatar>7B</Avatar>
-              <Avatar>7C</Avatar>
-              <Avatar>7D</Avatar>
-              <Avatar>7E</Avatar>
+              {classes.map((singleClass) => (
+                <Avatar key={singleClass.id}>{singleClass.code}</Avatar>
+              ))}
             </AvatarGroup>
             <GoToButton>Ver asignatura</GoToButton>
           </CardBottom>
