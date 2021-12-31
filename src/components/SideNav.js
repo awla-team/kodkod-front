@@ -99,8 +99,7 @@ const SideNav = ({}) => {
       <UserInfoContainer>
         <UserInfo />
       </UserInfoContainer>
-      <StyledPageList pages={pages} selected={selected}>
-      </StyledPageList>
+      <StyledPageList pages={pages} selected={selected} />
     </Container>
   );
 };

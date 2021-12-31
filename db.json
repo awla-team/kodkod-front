@@ -1,9 +1,9 @@
 {
   "asignaturas": [
-    { "id": 0, "name": "Lenguaje y literatura", "color": "#6D61E9", "img": "/lenguaje.png" },
-    { "id": 1, "name": "Historia, geografía y c.s.", "color": "#63CFEA", "img": "/historia.png" },
-    { "id": 2, "name": "Matemática", "color": "#62AFE8", "img": "/matematica.png" },
-    { "id": 3, "name": "Tecnología", "color": "#A737D5", "img": "/tecnologia.png" }
+    { "id": "lengua-y-literatura", "name": "Lengua y literatura", "color": "#6D61E9", "img": "/lenguaje.png" },
+    { "id": "historia-geografia-ciencias-sociales", "name": "Historia, geografía y ciencias sociales.", "color": "#63CFEA", "img": "/historia.png" },
+    { "id": "matematica", "name": "Matemática", "color": "#62AFE8", "img": "/matematica.png" },
+    { "id": "tecnologia", "name": "Tecnología", "color": "#A737D5", "img": "/tecnologia.png" }
   ],
   "unidades": [
     { "id": 0, "name": "Unidad 1", "asignaturaId": 0 },
@@ -17,5 +17,10 @@
     { "id": 8, "name": "Unidad 2", "asignaturaId": 2 },
     { "id": 9, "name": "Unidad 1", "asignaturaId": 3 },
     { "id": 10, "name": "Unidad 1", "asignaturaId": 3 }
+  ],
+  "cursos": [
+    { "id": "7a", "code": "7A", "name": "7°A", "estudiantes": 30 },
+    { "id": "7b", "code": "7B", "name": "7°B", "estudiantes": 33 },
+    { "id": "7c", "code": "7C", "name": "7°C", "estudiantes": 35 }
   ]
 }

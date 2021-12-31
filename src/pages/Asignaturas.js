@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {
   Typography,
   Grid,
@@ -8,12 +8,14 @@ import {
   CardMedia,
   CardActionArea,
   Button,
+  CircularProgress,
 } from '@mui/material';
 import styled from 'styled-components';
 import PageTitle from '../components/PageTitle';
 import { ReactComponent as BooksSVG } from '../assets/images/books2.svg';
 import CourseCard from '../components/CourseCard';
-import { getAsignaturas } from '../services/asignaturas';
+import CourseDrawer from '../components/CourseDrawer';
+import AsignaturasProvider, { AsignaturasContext } from '../providers/AsignaturasProvider';
 
 const Container = styled.div`
   .MuiGrid-root {
@@ -24,30 +26,27 @@ const Container = styled.div`
 `;
 
 const Asignaturas = ({}) => {
-  const [asignaturas, setAsignaturas] = useState([]);
-
-  useEffect(() => {
-    getAsignaturas()
-    .then((response) => {
-      setAsignaturas(response.data);
-    })
-    .catch((e) => {
-      console.log(e);
-    });
-  }, []);
+  const { asignaturas, selectedAsignatura, asignaturasLoading, handleSelectAsignatura, handleUnselectAsignatura } = useContext(AsignaturasContext);
 
   return (
     <Container>
       <PageTitle icon={<BooksSVG />} subtitle="Gestiona tus asignaturas de manera simple.">Mis asignaturas</PageTitle>
-      <Grid container spacing={0} sx={{ margin: 0, width: '100%' }}>
-        {asignaturas.map((asignatura) => (
-          <Grid item sm={3}>
-            <CourseCard key={asignatura.id} img={asignatura.img} background={asignatura.color} title={asignatura.name} />
+      {!asignaturasLoading ? (
+        <>
+          <Grid container spacing={0} sx={{ margin: 0, width: '100%' }}>
+            {asignaturas.map((asignatura) => (
+              <Grid key={asignatura.id} item sm={3}>
+                <CourseCard img={asignatura.img} background={asignatura.color} title={asignatura.name} onClick={() => handleSelectAsignatura(asignatura)} />
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
+          <CourseDrawer />
+        </>
+      ): (
+        <CircularProgress />
+      )}
     </Container>
   );
-}
+};
 
 export default Asignaturas;

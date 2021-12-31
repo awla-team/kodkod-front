@@ -56,10 +56,10 @@ const GoToButton = styled.div`
   }
 `;
 
-const CourseCard = ({ title, img, background }) => (
+const CourseCard = ({ title, img, background, onClick }) => (
   <div>
     <Card sx={{ background, color: 'white', borderRadius: '24px', width: 280 }}>
-      <CardActionArea>
+      <CardActionArea onClick={onClick}>
         <ImgContainer background={background}>
           <CardMedia
             sx={{ padding: '12px 48px' }}

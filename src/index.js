@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AsignaturasProvider from './providers/AsignaturasProvider';
 
 const theme = createTheme({
   components: {
@@ -19,20 +20,24 @@ const theme = createTheme({
 });
 
 const Asignaturas = lazy(() => import('./pages/Asignaturas'));
+const Clase = lazy(() => import('./pages/Clase'));
 
 render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Suspense fallback={<div>Cargando...</div>}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/app" element={<App />}>
-              <Route path="asignaturas" element={<Asignaturas />} />
-            </Route>
-            <Route path="/" element={<Navigate replace to="/app" />} />
-          </Routes>
-        </BrowserRouter>
-      </Suspense>
+      <AsignaturasProvider>
+        <Suspense fallback={<div>Cargando...</div>}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/app" element={<App />}>
+                <Route path="asignaturas" element={<Asignaturas />} />
+                <Route path="asignaturas/:asignaturaId/:cursoId" element={<Clase />} />
+              </Route>
+              <Route path="/" element={<Navigate replace to="/app" />} />
+            </Routes>
+          </BrowserRouter>
+        </Suspense>
+      </AsignaturasProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
