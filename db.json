@@ -30,5 +30,13 @@
     { "id": "lengua-literatura-1a", "name": "Lengua y literatura - 1°A", "courseId": 2, "classId": 6 },
     { "id": "lengua-literatura-1b", "name": "Lengua y literatura - 1°B", "courseId": 2, "classId": 7 },
     { "id": "lengua-literatura-1c", "name": "Lengua y literatura - 1°C", "courseId": 2, "classId": 8 }
+  ],
+  "subjects": [
+    { "id": 0, "code": 1, "name": "El héroe en distintas épocas", "courseId": 0 },
+    { "id": 1, "code": 2, "name": "La solidaridad y la amistad", "courseId": 0 },
+    { "id": 2, "code": 3, "name": "Mitología y relatos de creación", "courseId": 0 },
+    { "id": 3, "code": 1, "name": "Epopeya", "courseId": 1 },
+    { "id": 4, "code": 2, "name": "Experiencias del amor", "courseId": 1 },
+    { "id": 5, "code": 3, "name": "Relatos de misterio", "courseId": 1 }
   ]
 }
