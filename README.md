@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Kodkod 😺 tus clases más épicas que nunca!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
