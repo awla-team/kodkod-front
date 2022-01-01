@@ -3,13 +3,9 @@ import {
   CircularProgress,
   Tabs,
   Tab,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
 } from '@mui/material';
 import styled from 'styled-components';
-import { BrowserRouter, Route, Navigate } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { AnimatedRoutes } from '../components/Transitions/RouteTransition';
 import { useParams } from 'react-router-dom';
 import { ReactComponent as BoardSVG } from '../assets/images/board.svg';

@@ -33,7 +33,7 @@ const StyledAccordion = styled(Accordion)`
     left: 0;
     height: 100%;
     width: 4px;
-    background: ${({ indicator }) => indicator || 'none'};
+    background: ${({ expanded, indicator }) => expanded ? indicator : 'gray'};
   }
 `;
 
