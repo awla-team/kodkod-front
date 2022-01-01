@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy } from 'react';
 import {
   CircularProgress,
   Tabs,
@@ -8,14 +8,14 @@ import {
   AccordionDetails,
   Typography,
 } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styled from 'styled-components';
+import { BrowserRouter, Route, Navigate } from "react-router-dom";
+import { AnimatedRoutes } from '../components/Transitions/RouteTransition';
 import { useParams } from 'react-router-dom';
 import { ReactComponent as BoardSVG } from '../assets/images/board.svg';
 import PageTitle from '../components/PageTitle';
 import { MountTransition } from '../components/Transitions/MountTransition';
 import { getClassCourse } from '../services/classCourses';
-import { getCourseSubjects } from '../services/subjects';
 
 const Container = styled.div`
   .MuiGrid-root {
@@ -25,10 +25,15 @@ const Container = styled.div`
   }
 `;
 
-const Clase = () => {
+const TabContent = styled.div`
+  padding: 24px 0px;
+`;
+
+const Subjects = lazy(() => import('./Subjects'));
+
+const ClassCourse = () => {
   const { classCourseId } = useParams();
   const [classCourse, setClassCourse] = useState();
-  const [subjects, setSubjects] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedTab, setSelectedTab] = useState(0);
 
@@ -46,16 +51,8 @@ const Clase = () => {
   }, [classCourseId]);
 
   useEffect(() => {
-    if (classCourse) {
-      getCourseSubjects(classCourse.course.id)
-        .then((response) => {
-          setSubjects(response.data);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }
-  }, [classCourse]);
+
+  }, []);
 
   return (
     <MountTransition slide={0} slideUp={0}>
@@ -65,32 +62,16 @@ const Clase = () => {
             {classCourse ? (
               <div>
                 <PageTitle icon={<BoardSVG />} subtitle="Asigna tareas, evalúa y comunícate con tus estudiantes.">{classCourse.name}</PageTitle>
-                <Tabs value={selectedTab} onChange={(event, value) => setSelectedTab(value)} aria-label="basic tabs example">
+                <Tabs value={selectedTab} onChange={(event, value) => setSelectedTab(value)}>
                   <Tab label="Unidades" value={0} />
                   <Tab label="Evaluaciones" value={1} />
                   <Tab label="Estudiantes" value={2} />
                 </Tabs>
-                <div>
-                  {subjects.map((subject) => (
-                    <Accordion>
-                      <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1bh-content"
-                      id="panel1bh-header"
-                      >
-                        <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                          {`Unidad ${subject.code}: ${subject.name}`}
-                        </Typography>
-                        <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <Typography>
-                        hola maldicion
-                        </Typography>
-                      </AccordionDetails>
-                    </Accordion>
-                  ))}
-                </div>
+                <TabContent>
+                  <AnimatedRoutes>
+                    <Route path="unidades" element={<Subjects courseId={classCourse.course.id} />} />
+                  </AnimatedRoutes>
+                </TabContent>
               </div>
             ) : (
               <span>¡Oops! ¡Esta clase no existe!</span>
@@ -104,4 +85,4 @@ const Clase = () => {
   );
 };
 
-export default Clase;
+export default ClassCourse;

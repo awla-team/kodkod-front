@@ -38,5 +38,28 @@
     { "id": 3, "code": 1, "name": "Epopeya", "courseId": 1 },
     { "id": 4, "code": 2, "name": "Experiencias del amor", "courseId": 1 },
     { "id": 5, "code": 3, "name": "Relatos de misterio", "courseId": 1 }
+  ],
+  "contents": [
+    { "id": 0, "name": "Contenido 1", "subjectId": 0 },
+    { "id": 1, "name": "Contenido 2", "subjectId": 0 },
+    { "id": 2, "name": "Contenido 1", "subjectId": 1 },
+    { "id": 3, "name": "Contenido 2", "subjectId": 1 },
+    { "id": 4, "name": "Contenido 1", "subjectId": 2 },
+    { "id": 5, "name": "Contenido 2", "subjectId": 2 }
+  ],
+  "resources": [
+    { "id": 0, "name": "Recurso 1", "extension": "pdf", "link": "www.google.cl", "contentId": 0 },
+    { "id": 1, "name": "Recurso 2", "extension": "pdf", "link": "www.google.cl", "contentId": 0 },
+    { "id": 2, "name": "Recurso 3", "extension": "pdf", "link": "www.google.cl", "contentId": 0 }
+  ],
+  "assignments": [
+    { "id": 0, "name": "Tarea 1", "contentId": 0 },
+    { "id": 1, "name": "Tarea 2", "contentId": 0 },
+    { "id": 2, "name": "Tarea 3", "contentId": 0 }
+  ],
+  "tests": [
+    { "id": 0, "name": "Prueba 1", "contentId": 0 },
+    { "id": 1, "name": "Prueba 2", "contentId": 0 },
+    { "id": 2, "name": "Prueba 3", "contentId": 0 }
   ]
 }

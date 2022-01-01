@@ -20,7 +20,7 @@ const Container = styled.div`
   }
 `;
 
-const Asignaturas = () => {
+const Courses = () => {
   const [loading, setLoading] = useState(false);
   const [classCourses, setClassCourses] = useState({});
   const [selectedCourse, setSelectedCourse] = useState();
@@ -68,4 +68,4 @@ const Asignaturas = () => {
   );
 };
 
-export default Asignaturas;
+export default Courses;

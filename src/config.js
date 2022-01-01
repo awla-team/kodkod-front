@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
 import axios from 'axios';
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 `;

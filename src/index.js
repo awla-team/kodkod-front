@@ -19,8 +19,8 @@ const theme = createTheme({
   },
 });
 
-const Asignaturas = lazy(() => import('./pages/Asignaturas'));
-const Clase = lazy(() => import('./pages/Clase'));
+const Courses = lazy(() => import('./pages/Courses'));
+const ClassCourse = lazy(() => import('./pages/ClassCourse'));
 
 render(
   <React.StrictMode>
@@ -29,8 +29,8 @@ render(
         <BrowserRouter>
           <AnimatedRoutes>
             <Route path="/app" element={<App />}>
-              <Route path="asignaturas" element={<Asignaturas />} />
-              <Route path="asignaturas/:classCourseId" element={<Clase />} />
+              <Route path="asignaturas" element={<Courses />} />
+              <Route path="asignaturas/:classCourseId/*" element={<ClassCourse />} />
             </Route>
             <Route path="/" element={<Navigate replace to="/app" />} />
           </AnimatedRoutes>
